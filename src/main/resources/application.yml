@@ -1,0 +1,32 @@
+
+# EMBEDDED SERVER CONFIGURATION (ServerProperties)
+server:
+    port: 80
+    
+# APP PROPERTIES
+info:
+    version: ${project.version}
+    app:
+        name: zuul-service
+        description: Zuul service
+        
+
+        
+# MONITORING
+spring:
+    application:
+        name: ${info.app.name}
+    cloud:
+        config:
+            enabled: false
+            
+
+ 
+
+# ZUUL
+zuul:
+    routes:
+        users:
+            path: /**
+            url: http://watchrabbit.com
+            
